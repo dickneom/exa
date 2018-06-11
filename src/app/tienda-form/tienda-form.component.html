@@ -1,0 +1,39 @@
+<h1>Tienda</h1>
+<form #fTienda="ngForm" (ngSubmit)="grabaTienda()" class="ancho100 mostrar">
+  <mat-form-field class="ancho100">
+    <!-- <input matInput placeholder="Nombres" formControlName="nombres"> -->
+    <input matInput placeholder="Nombres" id="nombres" [(ngModel)]="model.nombres" name="nombres" required>
+  </mat-form-field>
+
+  <mat-form-field class="ancho100">
+    <!-- <input matInput placeholder="Dirección" formControlName="direccion"> -->
+    <input matInput placeholder="Dirección" id="direccion" [(ngModel)]="model.direccion" name="direccion" required>
+  </mat-form-field>
+
+  <mat-form-field class="ancho100">
+    <input matInput [matDatepicker]="picker" placeholder="Fecha de Apertura" required class="ancho100" [value]="date.value" name="fechaApertura"
+      [(ngModel)]="model.fechaApertura">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="ancho100">
+    <input matInput placeholder="RUC" id="ruc" [(ngModel)]="model.RUC" name="ruc" required>
+  </mat-form-field>
+  <div class="ancho100">
+    <mat-checkbox type="checkbox" class="ancho100" [(ngModel)]="model.matriz" name="matriz">Matriz</mat-checkbox>
+  </div>
+
+  <div class="ancho100">
+    <button mat-button [disabled]="!fTienda.form.valid">Grabar</button>
+    <!-- <button mat-button (click)="nuevaTienda(); fTienda.reset()">Nueva Tienda</button> -->
+  </div>
+</form>
+
+<!-- TODO: Solo por comprobacion
+<div [hidden]="!submitted">
+  <h2>Grabado</h2>
+  {{model.id}}{{model.nombres}}
+</div>
+<div *ngIf="model===undefined; else elseBlock">modelo indefinido</div>
+<ng-template #elseBlock>modelo definido</ng-template> -->

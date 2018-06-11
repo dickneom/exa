@@ -1,0 +1,21 @@
+<div id="tarjeta">
+  <!-- <p-card class="card" title="Tarjeta Estudiante" [style]="{width: '100%'}" style="margin-left: 20px; margin-top: 30px" *ngFor="let info of tarjeta"> -->
+    <div>
+      <label style="font-weight: bold">Nombres:</label>
+      {{tienda.nombres}}
+      <br>
+      <label style="font-weight: bold">Dirección:</label>
+      {{tienda.direccion}}
+      <br>
+      <label style="font-weight: bold">Fecha de Apertura:</label>
+      {{tienda.fechaApertura | date}}
+      <br>
+      <label style="font-weight: bold">RUC:</label>
+      {{tienda.RUC}}
+      <br>
+      <label id="labelGraduado" style="font-weight: bold">Matriz:</label>
+      {{tienda.matriz}}
+      <!-- {{cambiarBolean(info.graduado)}} -->
+    </div>
+  <!-- </p-card> -->
+</div>
