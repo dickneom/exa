@@ -31,10 +31,22 @@
 // npm install primeng --save
 // npm install primeicons --save
 // npm install @angular/animations --save
-// Agregar las dependencias en index.html o en angular.json
+// Agregar las dependencias en la session styles de  angular.json (en versiones anteriores angular-cli.json)
+// de acuerdo a la documentacion tambien
+// hay que acerlo en index.html (Creo que en uno de los dos es suficiente, hay que probar)
 // <link rel="stylesheet" type="text/css" href="/node_modules/primeicons/primeicons.css" />
 // <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
 // <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+// Con estos pasos me sale que no se puede localizar los archivos indicados.
+// Para solucionar esto: copie los modulos primeng y primeicons al directorio src/assets
+// y agregue en la seccion styles de angular.json
+// "src/assets/primeicons/primeicons.css",
+// "src/assets/primeng/resources/themes/omega/theme.css",
+// "src/assets/primeng/resources/primeng.min.css"
+// y en el index.html agregue
+// <link rel="stylesheet" type="text/css" href="assets/primeng/resources/primeng.min.css" />
+// <link rel="stylesheet" type="text/html" href="assets/primeng/resources/themes/omega/theme.css" />
+// <link rel="stylesheet" type="text/html" href="assets/primeicons/primeicons.css" />
 
 
 
@@ -57,7 +69,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 // Generar modelo:
 // ng generate class tienda
 // ng generate class producto
-// ng generate class tiendas
+// ng generate class tiendas (Para simular datos ingresados)
 // ng generate service tienda
 // Generar los componentes:
 // ng generate component carrusel

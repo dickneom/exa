@@ -3,11 +3,13 @@ import { Observable, of } from 'rxjs';
 
 import { Tienda } from '../modelo/tienda';
 import { Tiendas } from '../modelo/tiendas';
+import { Producto } from '../modelo/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TiendaService {
+  tiendaSeleccionada: Tienda;
   tiendas: Tienda[] = [];
 
   constructor() { }
@@ -37,5 +39,28 @@ export class TiendaService {
       console.log("TIENDA ****** : " + value.nombres + " - " + value.fechaApertura);
       console.log("termina datos *****************************")
     });
+  }
+
+  agregarProducto(producto: Producto) {
+    this.tiendas.forEach(function(tienda) {
+      if (tienda.id === this.tiendaSeleccionada.id) {
+        producto.tiendaId = this.tiendaSeleccionada.id;
+        tienda.productos.push(producto);
+        this.setTiendaSeleccionada(tienda);
+      }
+    })
+  }
+
+  getProductos(tiendaId: number): Observable<Producto[]> {
+    return of(this.tiendas[tiendaId].productos)
+  }
+
+  setTiendaSeleccionada(tienda: Tienda) {
+    console.log("Seleccionando la tienda: " + tienda.id);
+    this.tiendaSeleccionada = tienda;
+  }
+
+  getTiendaSeleccionada(): Tienda {
+    return this.tiendaSeleccionada;
   }
 }

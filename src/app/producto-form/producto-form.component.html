@@ -1,12 +1,63 @@
-<div>
-  <form >
-    <input type="text" placeholder="Número de Producto">
-    <input type="text" placeholder="Nombre">
-    <input type="text" placeholder="Descripcion">
-    <input type="text" placeholder="Precio">
-    <input type="text" placeholder="Fecha Lanzamiento del Producto">
-    <input type="text" placeholder="Años de Garantía">
-    <input type="text" placeholder="Tienda">
+<div *ngIf="tienda">
+  <form #fProducto="ngForm">
+    <div class="ui-inputgroup" class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+        <!-- <input type="text" pInputText [(ngModel)]="model.numeroProducto" placeholder="Nombre" name="numeroProducto" required/> -->
+        <span class="ui-float-label">
+          <!-- <input id="float-input" type="text" size="30" pInputText> -->
+          <input id="float-input" pInputText type="text" [(ngModel)]="model.numeroProducto" name="numeroProducto" required />
+          <label for="float-input">Número de Producto</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <!-- <input type="text" pInputText [(ngModel)]="model.nombre" placeholder="Nombre" name="nombre" required/> -->
+        <span class="ui-float-label">
+          <input id="float-input" pInputText type="text" [(ngModel)]="model.nombre" name="nombre" required/>
+          <label for="float-input">Nombre</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <!-- <input type="text" pInputText [(ngModel)]="model.descripcion" placeholder="Descripcion" name="descripcion" /> -->
+        <span class="ui-float-label">
+          <input id="float-input" pInputText type="text" [(ngModel)]="model.descripcion" name="descripcion" required/>
+          <label for="float-input">Descripción</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+      <label for="fechaLanzamientoProducto">fecha de Lanzamiento</label>
+      <p-calendar id="fechaLanzamientoProducto" [(ngModel)]="model.fechaLanzamientoProducto" name="fechaLanzamientoProducto" ateFormat="dd.mm.yy"
+        [locale]="es"></p-calendar>
+    </div>
+
+    <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <!-- <input type="text" pInputText [(ngModel)]="model.precio" placeholder="Precio" name="precio" /> -->
+        <span class="ui-float-label">
+          <input id="float-input" pInputText type="text" [(ngModel)]="model.precio" name="precio" required/>
+          <label for="float-input">Precio</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-12" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <!-- <input type="text" pInputText [(ngModel)]="model.precio" placeholder="Precio" name="precio" /> -->
+        <span class="ui-float-label">
+          <input id="float-input" pInputText type="text" [(ngModel)]="model.aniosGarantia" name="aniosGarantia" required/>
+          <label for="float-input">Años de Garantía</label>
+        </span>
+      </div>
+    </div>
+
+    <button pButton type="button" (click)="agregarProducto()" label="Grabar"></button>
+
   </form>
 </div>
-

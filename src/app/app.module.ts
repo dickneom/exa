@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,12 +14,13 @@ import { TiendaInfoComponent } from './tienda-info/tienda-info.component';
 import { ProductoFormComponent } from './producto-form/producto-form.component';
 import { TablaComponent } from './tabla/tabla.component';
 
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
-import {TableModule} from 'primeng/table';
-import {InputTextModule} from 'primeng/inputtext';
-import {CheckboxModule} from 'primeng/checkbox';
-import {CalendarModule} from 'primeng/calendar';
+import { PanelModule } from 'primeng/panel';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {CalendarModule} from 'primeng/calendar';
     FormsModule,
     NgbModule.forRoot(),
     NgmaterialModule,
+    PanelModule,
     CardModule,
     ButtonModule,
     TableModule,

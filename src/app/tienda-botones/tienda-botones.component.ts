@@ -20,6 +20,6 @@ export class TiendaBotonesComponent implements OnInit {
 
   onClick(tienda: Tienda) {
     console.log("tienda-botones: " + tienda.nombres);
+    this.tiendaService.setTiendaSeleccionada(tienda);
   }
-
 }

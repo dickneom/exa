@@ -13,7 +13,7 @@ export class TiendaInfoComponent implements OnInit {
   constructor(private tiendaService: TiendaService) { }
 
   ngOnInit() {
-    this.tiendaService.getTienda(3)
+    this.tiendaService.getTienda(10)
       .subscribe(tienda => this.tienda = tienda);
   }
 
